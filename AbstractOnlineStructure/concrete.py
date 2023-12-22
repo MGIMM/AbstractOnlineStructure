@@ -1,3 +1,4 @@
+from abc import abstractmethod
 from dataclasses import dataclass
 from typing import Any, List
 from .abstract import AbstractAgent, AbstractEnv
@@ -8,7 +9,8 @@ class Agent(AbstractAgent):
     def __call__(self, obs):
         return self.act(obs) if obs is not None else None
 
-    def act(self, obs):
+    @abstractmethod
+    def act(self, obs) -> Any:
         ...
     
 @dataclass
