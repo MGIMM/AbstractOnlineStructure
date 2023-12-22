@@ -48,9 +48,13 @@ class Env(AbstractEnv):
             done = True
         return obs, done
     
+    @property
+    def state(self):
+        return self.state_
+
     def update(self, action):
         if action is not None:
-            self.state_.update(action)
+            self.state.update(action)
 
 def train(agent, env):
     done = False

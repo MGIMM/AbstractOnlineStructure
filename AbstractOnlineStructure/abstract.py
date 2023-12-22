@@ -53,3 +53,12 @@ class AbstractEnv(Base):
     @abstractmethod
     def step(self) -> Any:    
         ...
+
+    @property
+    @abstractmethod
+    def state(self):
+        ...
+
+    @abstractmethod
+    def update(self):    
+        ...
